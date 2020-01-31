@@ -18,20 +18,26 @@ export default new Router({
     },
     {
       name: 'Main',
-      path: '/Main',
+      path: '/main',
       component: Main,
       children: [
         {
           name: 'Index1',
-          path: '/index/index1',
+          path: '/index/index1/:id',
           component: Index1
         },
         {
           name: 'Index2',
-          path: '/index/index2',
-          component: Index2
+          path: '/index/index2/:id',
+          component: Index2,
+          props: true
         }
       ]
+    },
+    {
+      name: 'Home',
+      path: '/home',
+      redirect: '/main'
     }
   ]
 });

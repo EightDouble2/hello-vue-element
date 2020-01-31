@@ -38,7 +38,7 @@
       login: function (formName) {
         this.$refs[formName].validate((valid) => {
           if(valid) {
-            this.$router.push("/Main")
+            this.$router.push("/main")
           }else {
             this.$message.error('请输入账号密码');
           }

@@ -1,12 +1,13 @@
 <template>
   <div>
-    index2
+    index2 {{id}}
   </div>
 </template>
 
 <script>
   export default {
-    name: "Index2"
+    name: "Index2",
+    props: ["id"]
   }
 </script>
 

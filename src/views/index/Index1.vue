@@ -1,6 +1,6 @@
 <template>
   <div>
-    index1
+    index1 {{$route.params.id}}
   </div>
 </template>
 
