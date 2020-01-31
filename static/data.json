@@ -1,0 +1,26 @@
+{
+  "name": "JohnnyHao",
+  "url": "http://www.johnny.com",
+  "page": 88,
+  "isNonProfit": true,
+  "address": {
+    "street": "沙坪坝",
+    "city": "重庆",
+    "country": "中国"
+  },
+  "links": [
+    {
+      "name": "Google",
+      "url": "http://www.google.com"
+    },
+    {
+      "name": "Baidu",
+      "url": "http://www.baidu.com"
+    },
+    {
+      "name": "SoSo",
+      "url": "http://www.SoSo.com"
+    }
+  ]
+}
+© 2020 GitHub, Inc.
