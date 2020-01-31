@@ -20,9 +20,10 @@
             <i class="el-icon-setting" style="margin-right: 15px"></i>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item><router-link to="/home">首页</router-link> </el-dropdown-item>
+              <el-dropdown-item><router-link to="/logout">注销</router-link> </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>王小虎</span>
+          <span>{{this.$store.getters.getUser.username}}</span>
         </el-header>
 
         <el-main>
@@ -35,10 +36,7 @@
 
 <script>
   export default {
-    name: "Main",
-    data() {
-
-    }
+    name: "Main"
   }
 </script>
 

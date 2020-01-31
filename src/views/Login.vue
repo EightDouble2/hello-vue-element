@@ -38,7 +38,9 @@
       login: function (formName) {
         this.$refs[formName].validate((valid) => {
           if(valid) {
-            this.$router.push("/main")
+            sessionStorage.setItem('isLogin', 'true');
+            this.$store.dispatch('asyncSetUser', this.form);
+            this.$router.push("/main");
           }else {
             this.$message.error('请输入账号密码');
           }
@@ -57,7 +59,7 @@
     text-align: left;
     width: 400px;
     border: 1px solid #DCDFE6;
-    margin: 150px auto 0px auto;
+    margin: 150px auto 0 auto;
     padding: 20px 50px 20px 20px;
     border-radius: 5px;
     box-shadow: 0 0 25px;

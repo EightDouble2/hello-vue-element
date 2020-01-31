@@ -12,7 +12,7 @@ import NotFount from '@/views/404';
 Vue.use(Router);
 
 export default new Router({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     {
       name: 'Login',

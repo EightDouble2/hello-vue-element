@@ -8,11 +8,39 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
 import axios from 'axios';
-Vue.prototype.axios = axios;
+
+import Vuex from 'vuex';
+
+import store from './strore';
+
 //原型链
+Vue.prototype.axios = axios;
 Vue.config.productionTip = false;
 
-Vue.use(ElementUI);
+Vue.use(ElementUI).use(Vuex);
+
+router.beforeEach((to, from, next) => {
+  console.log('触发路由');
+
+  let isLogin = sessionStorage.getItem('isLogin');
+
+  if(to.path=='/logout') {
+    sessionStorage.clear();
+    next({path: '/login'});
+  }
+
+  else if(to.path=='/login') {
+    if(isLogin != null) {
+      next({path: '/main'});
+    }
+  }
+
+  else if(isLogin == null) {
+    next({path: '/login'});
+  }
+
+  next();
+});
 
 /* eslint-disable no-new */
 new Vue({
@@ -20,5 +48,6 @@ new Vue({
   components: { App },
   template: '<App/>',
   render: h => h(App),
-  router
+  router,
+  store
 });
