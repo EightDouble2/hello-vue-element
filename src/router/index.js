@@ -7,9 +7,12 @@ import Main from "@/views/Main";
 import Index1 from "@/views/index/Index1";
 import Index2 from "@/views/index/Index2";
 
+import NotFount from '@/views/404';
+
 Vue.use(Router);
 
 export default new Router({
+  // mode: 'history',
   routes: [
     {
       name: 'Login',
@@ -38,6 +41,11 @@ export default new Router({
       name: 'Home',
       path: '/home',
       redirect: '/main'
+    },
+    {
+      name: 'NotFount',
+      path: '*',
+      component: NotFount
     }
   ]
 });
